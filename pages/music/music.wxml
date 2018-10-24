@@ -1,0 +1,68 @@
+<!-- index.wxml -->
+<view class="container container-height">
+    <!-- <text>播放进度{{timeNumber}}%</text> -->
+    <!-- 分享和菜单 -->
+    <view class="song-control">
+        <view class="btn-share" style="float:left;position:relative;">
+            <button class="btn-share-item btn-share-button" open-type="share"></button>
+            <image class="btn-share-item btn-share-image" src="../../image/share.png"></image>
+        </view>
+        <view style="float:right;" bindtap="onShowList">
+            <image src="../../image/menu.png"></image>
+        </view>
+        <view style="clear:both;"></view>
+    </view>
+    <!-- 歌曲名 -->
+    <h2 class="userinfo-nickname">{{musicDetail.title}}</h2>
+    <!-- 歌手名 -->
+    <h5 class="userinfo-authorName">{{musicDetail.author}}</h5>
+    <!-- 唱片 -->
+    <view class="userinfo">
+        <view class="music-background">
+            <image bindtap="bindMusicTrigger" class="music-background-center" src="../../image/yuan.png" alt="圆心" mode="scaleToFill"></image>
+            <image bindtap="bindMusicTrigger" class="userinfo-avatar {{musicStop}}" src="{{musicDetail.pic}}" background-size="cover"></image>
+            <image style="{{pointerDeg}}" class="pointer {{pointerLeavel}}" src="../../image/pointer.png"></image>
+        </view>
+    </view>
+    <!-- 播放器控制 -->
+    <view style="width:80%;">
+        <audio id="myAudio" bindpause="onPause" bindended="nextSong" bindtimeupdate="timeUpdate" poster="{{musicDetail.pic}}" name="{{musicDetail.title}}" author="{{musicDetail.author}}" src="{{musicDetail.url}}"></audio>
+        <view class="music-time">
+            <view class="music-time-block" style="left:{{musicTimePosition}}"></view>
+            <!-- <image class="music-time-block" style="left:{{musicTimePosition}}" src="../../image/yuan1.png"></image> -->
+        </view>
+        <view class="song-second">
+            <text style="float:left;">{{already}}</text>
+            <text style="float:right;">{{future}}</text>
+            <view style="clear:both;"></view>
+        </view>
+        <view class="audioBtn">
+            <view class="button">
+                <image bindtap="preSong" src="../../image/left.png"></image>
+            </view>
+            <view class="button audioBtn-center">
+                <image bindtap="bindMusicTrigger" src="{{playSrc}}"></image>
+            </view>
+            <view class="button">
+                <image bindtap="nextSong" src="../../image/right.png"></image>
+            </view>
+        </view>
+        <text class="copy-right">所有歌曲版权来自网易云音乐</text>
+    </view>
+    <scroll-view scroll-y="false" class="background-modal" bindtap="onShowList" wx:if="{{showBackground}}"></scroll-view>
+    <view class='song-list' wx:if="{{showSongList}}" animation='{{animationData}}'>
+        <view class="song-list-title">
+            <view class="song-title">歌曲列表:</view>
+            <view class="song-close" bindtap="onShowList">
+                <image src="../../image/close.png"></image>
+            </view>
+            <view style="clear:both;"></view>
+        </view>
+        <scroll-view scroll-y class="scroll-view">
+            <view class="song-item {{item.isSong}}" bindtap="selectSong" wx:for-index="idx" wx:for="{{musicList}}" data-index="{{idx}}" wx:for-item="item" wx:key="songid">
+                {{item.title}} - {{item.author}}
+                <image class="songing" bindtap="bindMusicTrigger" wx:if="{{idx==currentSongNumber}}" src="{{playSrc}}"></image>
+            </view>
+        </scroll-view>
+    </view>
+</view>

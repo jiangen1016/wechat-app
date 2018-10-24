@@ -1,0 +1,28 @@
+<view>
+    <view class="section">
+        <picker class="section-item" bindchange="bindPickerChange" value="{{index}}" range="{{expressList}}" range-key="name">
+            <view class="picker">
+            </view>
+            快递公司：{{expressDetail.name}}
+        </picker>
+        <view class="section-item">
+            <label for="express-number" class="express-number-label" style="display:flex;">
+                <text class="express-number-item">快递单号：</text>
+                <input class="express-number-item" placeholder-class="place-holder" id="express-number" type="number"
+                    placeholder="请输入快递单号" bindinput="onBindKeyInput" />
+            </label>
+        </view>
+        <button type="primary" size="default" bindtap="searchLine">查询</button>
+    </view>
+    <view wx:if="{{noLineData}}" class="no-data">
+        <image src="../../image/noData.png"></image>
+        <text>暂无数据</text>
+    </view>
+    <block wx:else>
+        <view class="express-list" wx:for="{{lineList}}" wx:for-item="item" wx:key="idx" wx:for-index="idx" data-phone="{{item.phone}}"
+            bindtap="onrichClick">
+            <rich-text nodes="{{item.context}}"></rich-text>
+            <view class="express-time">{{item.ftime}}</view>
+        </view>
+    </block>
+</view>

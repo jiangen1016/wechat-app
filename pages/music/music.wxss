@@ -1,0 +1,264 @@
+/**index.wxss**/
+.container-height {
+    height: 100vh !important;
+    /* background-image: -webkit-linear-gradient(left, rgba(90, 87, 89, 0.8), rgba(0, 0, 0, 0.8)); */
+    background: #ebe9e9;
+}
+
+.copy-right {
+    color: rgb(56, 35, 35) !important;
+    text-align: center;
+    font-size: 10px;
+    width: 100%;
+    display: inline-block;
+
+}
+
+.container-height text {
+    font-weight: bolder;
+    color: #000;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo .pointer {
+    width: 157rpx;
+    height: 313rpx;
+    position: absolute;
+    right: -50rpx;
+    top: 0px;
+    transform-origin: 70px 10px;
+    transform: rotate(-20deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.song-second {
+    margin: 20rpx;
+}
+
+.userinfo .pointer-leavel {
+    transform: rotate(-0deg) !important;
+}
+
+.userinfo-avatar {
+    width: 220rpx;
+    height: 220rpx;
+    margin: 102rpx;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.music-background {
+    width: 420rpx;
+    height: 420rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    position: relative;
+}
+
+.music-background .music-background-center {
+    width: 420rpx;
+    height: 420rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.userinfo-nickname {
+    color: #000;
+    /* margin: 50rpx 0 20rpx 0; */
+    font-size: 48rpx;
+    font-weight: bolder;
+}
+
+.userinfo-authorName {
+    color: #000;
+    margin: 0rpx;
+    font-size: 32rpx;
+    font-weight: bolder;
+}
+
+.usermotto {
+    margin-top: 200px;
+}
+
+.music-cd {
+    transform-origin: 50%;
+    animation: music 10s infinite linear;
+}
+
+.music-cd-stop {
+    animation-play-state: paused;
+}
+
+.audioBtn {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+}
+
+.audioBtn .button {
+    flex: 1;
+    text-align: center;
+    width: 33vw;
+    /* height: 33vw; */
+}
+
+.audioBtn .button image {
+    width: 100rpx;
+    height: 100rpx;
+    display: inline-block;
+}
+
+.audioBtn .audioBtn-center image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-top: -10rpx;
+}
+
+.music-time {
+    width: 100%;
+    height: 1rpx;
+    border: 5rpx solid #ccc;
+    border-radius: 2rpx;
+    background: #ddd;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+
+.music-time-block {
+    /* width: 5rpx;
+    background: orange;
+    border-radius: 50%;
+    position: absolute;
+    height: 5rpx;
+    left: 0px;
+    top: 0px; */
+    /* transition: width 1s linear; */
+    width: 20rpx;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    height: 20rpx;
+    top: -9rpx;
+    margin-left: -10rpx;
+}
+
+
+.song-control {
+    height: 60rpx;
+    width: 80%;
+}
+
+.song-control .btn-share {
+    position: relative;
+
+}
+
+.song-control .btn-share .btn-share-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.song-control .btn-share .btn-share-button {
+    z-index: 10;
+    width: 60rpx;
+    height: 60rpx;
+    opacity: 0;
+}
+
+.song-control .btn-share .btn-share-image {
+    z-index: 9;
+}
+
+
+.song-control view image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.background-modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.song-list {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    /* opacity: 0.6; */
+    border-radius: 20rpx 20rpx 0 0;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+
+.song-list .song-list-title {
+    width: 90%;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.song-list .song-list-title .song-title {
+    float: left;
+    font-size: 32rpx;
+    font-weight: bolder;
+}
+
+.song-list .song-list-title .song-close {
+    float: right;
+}
+
+.song-list .song-list-title .song-close image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 20rpx;
+}
+
+.song-list .scroll-view {
+    height: 60vh;
+}
+
+.song-item {
+    padding: 20rpx;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+    font-size: 30rpx;
+}
+
+.song-list .songing {
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+}
+
+.song-current {
+    /* color: #ccc; */
+    color: rgba(122, 55, 107, 0.8);
+}
+
+
+@keyframes music {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

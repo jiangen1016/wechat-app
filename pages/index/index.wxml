@@ -1,0 +1,37 @@
+<!-- index.wxml -->
+<view class="container-index">
+    <view class="view-location-temperature">
+        <view class="view-location" wx:if="{{showInfo}}">
+            <image src="../../image/location.png"></image>
+            {{weatherData.currentCity}}
+        </view>
+        <view class="view-temperature" wx:if="{{showInfo}}">
+            {{weatherData.temperature}}
+            <image src="../../image/temperature.png"></image>
+        </view>
+    </view>
+    <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button> -->
+    <view animation='{{animationData0}}' class="view-card view-card-info" bindtap="showError">
+        <view class="view-card-info-inner">
+            <text>{{weatherData.date}}</text>
+            <text>{{weatherData.weatherDesc}}</text>
+            <text>{{weatherData.wind}}</text>
+        </view>
+    </view>
+    <view animation='{{animationData1}}' class="view-card view-card-center view-card-blue {{runMove}}" bindtap="goWeather">
+        <image src="../../image/weather.png"></image>
+        <text>查天气</text>
+    </view>
+    <view animation='{{animationData2}}' class="view-card view-card-center view-card-green {{runMove}}" bindtap="goExpress">
+        <image src="../../image/express.png"></image>
+        <text>查快递</text>
+    </view>
+    <view animation='{{animationData3}}' class="view-card view-card-center view-card-red {{runMove}}" bindtap="goMusic">
+        <image src="../../image/music.png"></image>
+        <text>听音乐</text>
+    </view>
+    <view animation='{{animationData4}}' class="view-card view-card-center view-card-more " bindtap="goMore">
+        <image src="../../image/more.png"></image>
+        <text>更多</text>
+    </view>
+</view>

@@ -1,0 +1,114 @@
+.weather-card {
+    width: 90%;
+    min-height: 80rpx;
+    border: 1px solid #ccc;
+    text-align: center;
+    color: #000;
+    line-height: 80rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20rpx;
+    margin: 10rpx auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wearther-city-label {
+    display: flex;
+    padding: 20rpx;
+    font-size: 32rpx;
+    line-height: 1.4rem;
+}
+
+.wearther-city-label input {
+    width: 70%;
+}
+
+.view-card-info {
+    width: 90%;
+    /* padding: 20rpx; */
+    margin: 0rpx auto;
+    font-size: 32rpx;
+}
+
+.weather-card text {
+    font-size: 32rpx;
+    max-height: 40rpx;
+    line-height: 40rpx;
+    color: #000;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-right {
+    align-items: left !important;
+}
+
+.wendu {
+    font-weight: bolder;
+    font-size: 56px;
+    padding: 20rpx;
+}
+
+
+.weather-card .card image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.weather-card0 {
+    transform: translateX(400px);
+    background-image: -webkit-linear-gradient(left, rgba(105, 175, 236, 0.8), rgb(40, 121, 217));
+
+}
+
+.weather-card1 {
+    transform: translateX(-400px);
+    background-image: -webkit-linear-gradient(left, rgba(94, 193, 169, 0.8), rgb(40, 121, 144));
+
+}
+
+.weather-card2 {
+    transform: translateX(400px);
+    background-image: -webkit-linear-gradient(left, rgba(105, 175, 236, 0.8), rgb(70, 166, 217));
+
+}
+
+.weather-card3 {
+    transform: translateX(-400px);
+    background-image: -webkit-linear-gradient(left, rgba(222, 58, 71, 0.8), rgb(180, 36, 45));
+}
+
+.weather-card4 {
+    transform: translateX(400px);
+    background-image: -webkit-linear-gradient(left, rgba(233, 184, 63, 0.8), rgb(221, 142, 40));
+
+}
+
+
+.view-card-list {
+    /* display: flex; */
+}
+
+.view-card-list .view-card {
+    flex: 1;
+}
+
+.no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-data image {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 100rpx auto;
+    flex: 1;
+}
